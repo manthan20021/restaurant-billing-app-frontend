@@ -1,14 +1,19 @@
-import Header from "./component/Header"
-import ManeuItemForm from "./component/Menu-item-form"
+import { Outlet } from "react-router-dom"
+import Header from "./component/header/Header"
+
+
 
 function App() {
 
   return (
-    <div className="w-full flex flex-col items-center justify-center ">
+    <div id="AppLeout" className="w-full flex flex-col items-center justify-center ">
      <Header/>
-     <ManeuItemForm/>
+     <Outlet/>
     </div>
   )
+
 }
+
+
 
 export default App

@@ -5,36 +5,43 @@ const ManeuItemForm = () => {
     itemName: "",
     description: "",
     price: "",
-    itemImg: ""
+    itemImg: "",
   });
+
+  //we need to hendel the cases
+  //1. if item-name = number > error
+  //2. if item-name = ""/ emty > error
+  //3. if item-name = all the simbols like !@#$%^&* > error
 
   const handelInputChange = (e) => {
     let name = e.target.name;
     let values = e.target.value;
+    
+    if(name.itemName === ""){
+      alert("enter item")
+    }
     setMenuItem({
       ...menuItem,
       [name]: values,
-    });
+    })
   };
 
   const henderlOnSubmit = async (e) => {
     e.preventDefault();
-   try {
-     const responce = await fetch("http://localhost:3000/menu", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(menuItem),
-    });
-    if(responce.ok){
-      setMenuItem({itemName: "", description: "", price: "", itemImg: ""})
-    };
-
-   } catch (error) {
-    console.log("respnce-frondernd-error:", error);
-    
-   }
+    try {
+      const responce = await fetch("http://localhost:3000/menu", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(menuItem),
+      });
+      if (responce.ok) {
+        setMenuItem({ itemName: "", description: "", price: "", itemImg: "" });
+      }
+    } catch (error) {
+      console.log("respnce-frondernd-error:", error);
+    }
   };
 
   return (
