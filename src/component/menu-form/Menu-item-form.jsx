@@ -17,17 +17,13 @@ const ManeuItemForm = () => {
     let name = e.target.name;
     let values = e.target.value;
     
-    if(name.itemName === ""){
-      alert("enter item")
-    }
     setMenuItem({
       ...menuItem,
       [name]: values,
     })
   };
 
-  const henderlOnSubmit = async (e) => {
-    e.preventDefault();
+  const henderlOnSubmit = async () => {
     try {
       const responce = await fetch("http://localhost:3000/menu", {
         method: "POST",
@@ -90,6 +86,7 @@ const ManeuItemForm = () => {
           type="text"
           placeholder="Dish name"
           required
+          id="itemnameInput"
         />
         <input
           className="

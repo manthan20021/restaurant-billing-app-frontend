@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
 import MenuItemCard from "../menu-card/MenuItemCard";
+import {useSelector } from "react-redux";
+
 
 const MenuDashbord = () => {
-  const [menu, setMenu] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3000/menu")
-      .then((res) => res.json())
-      .then((data) => {
-        return setMenu(data)
-        
-      });
-  }, []);
+  const menuData = useSelector((store) => store.menu)
+  console.log("error from ",menuData);
+  
   return (
     <div className="w-full h-[1200px] bg-amber-400 flex flex-wrap justify-around">
-      {menu.map((res) => {
-        return <MenuItemCard key={res.id} menuData={res} />
-      })}
+      {/* {menuData.map((res) => {
+        return <MenuItemCard menuData={res}/>
+      })} */}
+      <h1>dashbord</h1>
     </div>
   );
 };
+
+
 
 export default MenuDashbord;
