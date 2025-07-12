@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { getMenuItem } from "./menuItemSlice";
+import menuItemReducer from "./menuItemSlice";
 
 const store = configureStore({
     reducer:{
-        menu: getMenuItem
+        menu: menuItemReducer
     }
 })
 

@@ -1,17 +1,25 @@
+import { useSelector } from "react-redux";
 import MenuItemCard from "../menu-card/MenuItemCard";
-import {useSelector } from "react-redux";
+import useMenuItem from "../../hooks/useMenuItem";
+
+
+
+
+
 
 
 const MenuDashbord = () => {
-  const menuData = useSelector((store) => store.menu)
-  console.log("error from ",menuData);
+  useMenuItem()
+  
+  const data  = useSelector((store)=> store.menu?.menuItem)
+   console.log("user",data);
+   
   
   return (
     <div className="w-full h-[1200px] bg-amber-400 flex flex-wrap justify-around">
-      {/* {menuData.map((res) => {
+      {data.map((res) => {
         return <MenuItemCard menuData={res}/>
-      })} */}
-      <h1>dashbord</h1>
+      })}
     </div>
   );
 };

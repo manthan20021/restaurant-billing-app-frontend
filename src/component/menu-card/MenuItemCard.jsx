@@ -2,10 +2,12 @@ import React from "react";
 
 const MenuItemCard = ({ menuData }) => {
   let data = menuData;
-  const {
+  let {
     itemName,
     price
-  } = data || []
+  } = data
+  console.log("item",data);
+  
   
   return (
     <div className="w-28 h-28 bg-green-800 text-white rounded-md p-0.5">

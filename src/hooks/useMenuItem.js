@@ -6,13 +6,11 @@ const useMenuItem = () => {
 
   const dispatch = useDispatch()
 
-    const menuItem = async () => {
+   const menuItem = async () => {
         try {
             const data = await fetch("http://localhost:3000/menu")
-        const jsonRes = await data.json()
-        dispatch(getMenuItem(jsonRes))
-        console.log( "this is from useMenu :",jsonRes);
-        
+        const jsonRes = await data.json() 
+        dispatch(getMenuItem(jsonRes))        
         } catch (error) {
             console.log("data fetching error:", error);
         } 
@@ -21,6 +19,8 @@ const useMenuItem = () => {
     useEffect(()=>{
         menuItem()
     },[])
+
+   
 }
 
 export default useMenuItem
