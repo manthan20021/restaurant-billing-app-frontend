@@ -2,17 +2,10 @@ import { useSelector } from "react-redux";
 import MenuItemCard from "../menu-card/MenuItemCard";
 import useMenuItem from "../../hooks/useMenuItem";
 
-
-
-
-
-
-
 const MenuDashbord = () => {
   useMenuItem()
   
   const data  = useSelector((store)=> store.menu?.menuItem)
-   console.log("user",data);
    
   
   return (

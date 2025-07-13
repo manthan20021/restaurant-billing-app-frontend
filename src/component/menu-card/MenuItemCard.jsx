@@ -1,12 +1,37 @@
 import React from "react";
 
+
 const MenuItemCard = ({ menuData }) => {
   let data = menuData;
   let {
     itemName,
-    price
+    price,
+    _id
   } = data
-  console.log("item",data);
+
+  //delete method for menu item
+  const deleteItem = async(id) => {
+    try {
+        const response  = await fetch(`http://localhost:3000/menu/delete/${id}`, {method: "DELETE"})
+        response.json({message:"menu-item deleted succsessfully"})
+    } catch (error) {
+     console.log(error);
+      
+    }
+  }
+
+  //update methode for menu item
+  const updateItem = async(id) => {
+     try {
+      const response = await fetch(`http://localhost:3000/menu/put/${id}`, {
+        method: "PUT"
+      })
+      response.json({message:"menu-item updated succsessfully"})
+     } catch (error) {
+      console.log(error);
+      
+     }
+  }
   
   
   return (
@@ -15,7 +40,11 @@ const MenuItemCard = ({ menuData }) => {
       <img src={null} alt="menu-img" />
       <p>{itemName}</p>
       <p>{price}</p>
+
+      <button onClick={() => deleteItem(_id)}>Delete</button>
+      <button onClick={() => updateItem(_id)}>Update</button>
     </div>
+
   );
 };
 

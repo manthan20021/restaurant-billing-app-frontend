@@ -10,13 +10,12 @@ const ManeuItemForm = () => {
 
   //we need to hendel the cases
   //1. if item-name = number > error
-  //2. if item-name = ""/ emty > error
+  //2. if item-name = ""/ emty > errorf
   //3. if item-name = all the simbols like !@#$%^&* > error
 
   const handelInputChange = (e) => {
     let name = e.target.name;
     let values = e.target.value;
-    
     setMenuItem({
       ...menuItem,
       [name]: values,
@@ -86,7 +85,6 @@ const ManeuItemForm = () => {
           type="text"
           placeholder="Dish name"
           required
-          id="itemnameInput"
         />
         <input
           className="
