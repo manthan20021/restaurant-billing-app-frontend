@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 
 const MenuItemCard = ({ menuData }) => {
 
@@ -52,32 +52,36 @@ const MenuItemCard = ({ menuData }) => {
   
   
   return (
-    <div className="w-28 h-28 bg-green-800 text-white rounded-md p-0.5">
-      <h1>CARD</h1>
-      <img src={null} alt="menu-img" />
+    <div className="w-[103px] h-[141px] bg-[#5959b2] rounded-xl ">
+      <img className="rounded-xl overflow-hidden" src="https://images.pexels.com/photos/1860208/pexels-photo-1860208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="menu-img" />
       <div>
         {
         isUpdate ? <form>
           <input 
         className="border-transparent bg-transparent w-full" 
         placeholder="itemNmame"
+
+
          type="text" 
-         value={itemName}
          />
          <input 
          className="border-transparent bg-transparent w-full" 
         placeholder="price"
          type="number"
-         value={price}
          />
         </form> 
         
-        : (<div> <p>{itemName}</p> <p>{price}</p></div>)
+        : (<div className="w-full flex flex-col items-center text-[#F6F5FF]"> <p>{itemName}</p> <p>Rs : {price}</p></div>)
          }
+<div className="w-full flex justify-around bg-gray-300 p-1 rounded-2xl  ">
+        <button className="text-[#5959b2] px-1 rounded-sm" onClick={() => deleteItem(_id)}>Delete</button>
+      <button className="text-[#5959b2] px-1 rounded-sm" onClick={() => updateItem(_id)}>Edit</button>
+      </div>
+         
         </div>
 
-      <button onClick={() => deleteItem(_id)}>Delete</button>
-      <button onClick={() => updateItem(_id)}>Edit</button>
+
+
     </div>
 
   );  

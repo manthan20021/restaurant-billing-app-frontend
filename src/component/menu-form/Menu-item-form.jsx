@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+
+
 const ManeuItemForm = () => {
   const [menuItem, setMenuItem] = useState({
     itemName: "",
@@ -7,6 +9,8 @@ const ManeuItemForm = () => {
     price: "",
     itemImg: "",
   });
+
+
 
   //we need to hendel the cases
   //1. if item-name = number > error
@@ -32,7 +36,7 @@ const ManeuItemForm = () => {
         body: JSON.stringify(menuItem),
       });
       if (responce.ok) {
-        setMenuItem({ itemName: "", description: "", price: "", itemImg: "" });
+        setMenuItem({ itemName: "", description: "", price: "", itemImg: ""});
       }
     } catch (error) {
       console.log("respnce-frondernd-error:", error);
@@ -41,44 +45,27 @@ const ManeuItemForm = () => {
 
   return (
     <div
-      className="
-    h-screen rounded-2xl
-    w-[1200px] flex 
-    flex-col items-center
-    bg-amber-400 
+      className="rounded-2xl
+    w-full flex 
+    flex-col items-center h-screen
+    bg-[#F6F5FF] 
     "
     >
-      <h1
-        className="
-        bg-clip-text 
-        text-gray-400 
-        sm:text-transparent 
-        text-center
-        sm:bg-gradient-to-b 
-        from-green-900 to-green-800 
-        dark:from-green-700 
-        dark:to-amber-400 
-        text-2xl md:text-8xl 
-        sm:text-7xl font-sans 
-        py-2 md:py-10 relative z-20 
-        font-bold tracking-tight
-        "
-      >
-        MENU ITEM FORM
-      </h1>
-
+      
       <form
         onSubmit={henderlOnSubmit}
-        className="flex flex-col w-[600px] 
-        items-center 
+        className="flex flex-col w-full h-auto
+        items-center pt-20 
         "
         action=""
       >
+        <h1 className="m-3 text-[#5959b2] font-bold w-[260px] text-xl ">Add Menu Item</h1>
+
         <input
           className="
-            bg-white w-full h-10 
+            bg-[#D9D9D9] w-[260px] h-10 
             px-1.5 rounded-md 
-            text-green-950 mb-10
+            text-green-950 mb-5
             "
           onChange={handelInputChange}
           name="itemName"
@@ -88,7 +75,7 @@ const ManeuItemForm = () => {
         />
         <input
           className="
-            bg-white w-full h-10 
+            bg-[#D9D9D9]  w-[260px] h-10 
             px-1.5 rounded-md 
             text-green-950 mb-10
             "
@@ -98,23 +85,24 @@ const ManeuItemForm = () => {
           placeholder="price"
           required
         />
-        <input
-          className="
-            bg-green-800 
-            h-20 w-32 px-1.5 rounded-md 
-            text-white mb-10
-            "
+
+        <div className="w-[260px]">
+          <img src="" alt="uplode img" />
+          <input
           onChange={handelInputChange}
           name="itemImg"
           type="file"
           placeholder="ADD DESH IMEGE +"
         />
+        </div>
+        
+
         <button
           className="
             text-white  
-            bg-green-800 px-5 
-            py-2 rounded-[4px]
-            "
+            bg-[#5959b2]
+            py-2 rounded-[4px] w-[260px] h-10
+           "
         >
           ADD TO MENU
         </button>

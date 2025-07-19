@@ -7,12 +7,13 @@ const MenuDashbord = () => {
   
   const data  = useSelector((store)=> store.menu?.menuItem)
    
-  
   return (
-    <div className="w-full h-[1200px] bg-amber-400 flex flex-wrap justify-around">
+    <div className="h-auto w-full flex items-center justify-center">
+    <div className=" h-auto grid  pl-3.5 grid-cols-3 space-x-[15px] space-y-[30px] ">
       {data.map((res) => {
         return <MenuItemCard menuData={res}/>
       })}
+    </div>
     </div>
   );
 };
