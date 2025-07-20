@@ -38,6 +38,9 @@ const ManeuItemForm = () => {
       if (responce.ok) {
         setMenuItem({ itemName: "", description: "", price: "", itemImg: ""});
       }
+      if(menuItem.itemName.length > 12){
+      alert("Item-name shuld be 12 or less then 12 character ")
+    }
     } catch (error) {
       console.log("respnce-frondernd-error:", error);
     }

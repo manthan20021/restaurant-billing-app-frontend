@@ -1,8 +1,12 @@
 import {  useState } from "react";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+
 
 const MenuItemCard = ({ menuData }) => {
 
    const [isUpdate, setIsUpdate] = useState(false)
+
   let data = menuData;
 
   let {
@@ -52,8 +56,10 @@ const MenuItemCard = ({ menuData }) => {
   
   
   return (
-    <div className="w-[103px] h-[141px] bg-[#5959b2] rounded-xl ">
-      <img className="rounded-xl overflow-hidden" src="https://images.pexels.com/photos/1860208/pexels-photo-1860208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="menu-img" />
+    <div className="w-[103px] h-[141px] bg-[#5959b2] rounded-xl group"  >
+      <div className=" w-full pt-[6px] flex justify-center items-center ">
+              <img className="rounded-xl overflow-hidden w-[89px] h-[81px]" src="https://tse2.mm.bing.net/th/id/OIP.OH41atW7q-eLSj8pIbe-XAHaE8?pid=Api&P=0&h=180" alt="menu-img" />
+      </div>
       <div>
         {
         isUpdate ? <form>
@@ -73,9 +79,13 @@ const MenuItemCard = ({ menuData }) => {
         
         : (<div className="w-full flex flex-col items-center text-[#F6F5FF]"> <p>{itemName}</p> <p>Rs : {price}</p></div>)
          }
-<div className="w-full flex justify-around bg-gray-300 p-1 rounded-2xl  ">
-        <button className="text-[#5959b2] px-1 rounded-sm" onClick={() => deleteItem(_id)}>Delete</button>
-      <button className="text-[#5959b2] px-1 rounded-sm" onClick={() => updateItem(_id)}>Edit</button>
+<div className="w-7 h-[100px] flex-col items-center justify-around bg-[#D9D9D9]  rounded-2xl sticky mt-[-100px] ml-[103px] {isHover} group-hover:flex hidden ">
+        <button className="text-[#5959b2] rounded-sm" onClick={() => deleteItem(_id)}>
+          <MdDelete />
+        </button>
+      <button className="text-[#5959b2]  rounded-sm" onClick={() => updateItem(_id)}>
+        <FaEdit />
+      </button>
       </div>
          
         </div>
