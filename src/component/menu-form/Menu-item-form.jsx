@@ -89,15 +89,16 @@ const ManeuItemForm = () => {
           required
         />
 
-        <div className="w-[260px]">
-          <img src="" alt="uplode img" />
+        
           <input
+          className=" text-white  
+            bg-[#5959b2]
+            py-2 rounded-[4px] w-[260px] h-10 mb-3"
           onChange={handelInputChange}
-          name="itemImg"
+          name="file"
           type="file"
           placeholder="ADD DESH IMEGE +"
         />
-        </div>
         
 
         <button

@@ -8,11 +8,14 @@ const MenuItemCard = ({ menuData }) => {
    const [isUpdate, setIsUpdate] = useState(false)
 
   let data = menuData;
+  console.log(data);
+  
 
   let {
+    itemImg,
     itemName,
     price,
-    _id,
+    _id
   } = data
 
   //delete method for menu item
@@ -58,7 +61,7 @@ const MenuItemCard = ({ menuData }) => {
   return (
     <div className="w-[103px] h-[141px] bg-[#5959b2] rounded-xl group"  >
       <div className=" w-full pt-[6px] flex justify-center items-center ">
-              <img className="rounded-xl overflow-hidden w-[89px] h-[81px]" src="https://tse2.mm.bing.net/th/id/OIP.OH41atW7q-eLSj8pIbe-XAHaE8?pid=Api&P=0&h=180" alt="menu-img" />
+              <img className="rounded-xl overflow-hidden w-[89px] h-[81px]" src={itemImg} alt="" />
       </div>
       <div>
         {

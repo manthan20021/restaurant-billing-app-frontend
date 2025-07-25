@@ -20,7 +20,7 @@ const Header = () => {
                 <li>dashbord</li>
             </NavLink>
 
-            <li className="ml-3 bg-[#D9D9D9] py-1 px-2 text-sm rounded-2xl">history</li>
+            <li className="ml-3 bg-[#D9D9D9] py-1 px-2 text-sm rounded-2xl">bills</li>
             <li className="ml-3 bg-[#D9D9D9] py-1 px-2 text-sm rounded-2xl">sells</li>
         </ul>
     </nav>
