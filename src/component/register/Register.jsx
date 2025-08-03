@@ -59,7 +59,7 @@ const Register = () => {
         "
         action=""
       >
-        <h1 className="m-3 text-[#5959b2] font-bold w-[260px] text-xl ">Add Menu Item</h1>
+        <h1 className="m-3 text-[#5959b2] font-bold w-[260px] text-xl ">Register</h1>
 
         <input
           className="

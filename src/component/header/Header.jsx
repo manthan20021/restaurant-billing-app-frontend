@@ -8,7 +8,7 @@ const Header = () => {
             <h2 className="font-extrabold text-white text-4xl mr-1">&</h2>
             <h1>APP Name</h1>
         </div>
-        <NavLink to="register">
+        <NavLink to="login">
                     <button className="bg-[#f6f5ff] text-[#5959b2] px-5 py-1 rounded-[4px]">Login</button>
         </NavLink>
     </div>

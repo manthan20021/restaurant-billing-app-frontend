@@ -7,6 +7,7 @@ import MenuDashbord from './component/menu-dashbord/MenuDashbord.jsx'
 import ManeuItemForm from './component/menu-form/Menu-item-form.jsx'
 import { Provider } from "react-redux"
 import store from './Slices/store.js'
+import Login from './component/login/Login.jsx'
 import Register from './component/register/Register.jsx'
 
 
@@ -23,7 +24,11 @@ const appRouter = createBrowserRouter([
 
       children:[
         {
-          path:"/register",
+          path:"/login",
+          element:<Login/>
+        },
+        {
+          path:"/login/register",
           element:<Register/>
         },
        {
