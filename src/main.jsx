@@ -9,13 +9,14 @@ import { Provider } from "react-redux"
 import store from './Slices/store.js'
 import Login from './component/login/Login.jsx'
 import Register from './component/register/Register.jsx'
+import Profiel from './component/profiel/Profiel.jsx'
 
 
 //make an store
 //make an slice
 //provid store to main
 
-
+//test12@test.com
 
 const appRouter = createBrowserRouter([
     {
@@ -28,8 +29,12 @@ const appRouter = createBrowserRouter([
           element:<Login/>
         },
         {
-          path:"/login/register",
+          path:"/register",
           element:<Register/>
+        },
+        {
+          path:"/profil",
+          element:<Profiel/>
         },
        {
         path:"/menu-form",
