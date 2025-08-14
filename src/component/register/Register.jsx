@@ -21,7 +21,7 @@ const Register = () => {
 
     const hendelSubmit =  async () =>{
         try {
-           const responce = await fetch("http://localhost:3000/register", {
+           const responce = await fetch("http://localhost:5000/register", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json",

@@ -5,8 +5,7 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async () => {
 
     try {
       const response = await fetch("http://localhost:5000/login", {
@@ -45,7 +44,7 @@ const Login = () => {
           className="bg-[#D9D9D9] w-[260px] h-10 px-1.5 rounded-md text-green-950 mb-3"
           onChange={(e) => setEmail(e.target.value)}
           name="email"
-          type="email"
+          type="text"
           placeholder="Email"
           required
         />

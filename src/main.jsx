@@ -41,7 +41,7 @@ const appRouter = createBrowserRouter([
         element:<ManeuItemForm/>
       },
       {
-         path:"/menu-dashbord",
+         path:"/menu",
       element:<MenuDashbord/>,
       }
       ]

@@ -28,7 +28,7 @@ const ManeuItemForm = () => {
 
   const henderlOnSubmit = async () => {
     try {
-      const responce = await fetch("http://localhost:3000/menu", {
+      const responce = await fetch("http://localhost:5000/menu", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
